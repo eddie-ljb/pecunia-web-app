@@ -23,5 +23,41 @@ public class HomepageController {
 		model.addAttribute("appName", appName);
 		return new ModelAndView("geografie.html");
 	}
+	
+	@GetMapping(value = "/imp")
+	public ModelAndView showImpressum(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("impressum.html");
+	}
+	
+	@GetMapping(value = "/kon")
+	public ModelAndView showKontakt(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("kontakt.html");
+	}
+	
+	@GetMapping(value = "/faq")
+	public ModelAndView showFAQ(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("faq.html");
+	}
+	
+	@GetMapping(value = "/news")
+	public ModelAndView showNews(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("news.html");
+	}
+	
+	@GetMapping(value = "/pol")
+	public ModelAndView showPolitik(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("politik.html");
+	}
+	
+	@GetMapping(value = "/stats")
+	public ModelAndView showStatistiken(Model model) {
+		model.addAttribute("appName", appName);
+		return new ModelAndView("statistik.html");
+	}
 
 }

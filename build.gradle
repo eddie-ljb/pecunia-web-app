@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'de.ebader'
-version = '0.0.1-SNAPSHOT'
+version = '0.1.1-SNAPSHOT'
 
 java {
 	sourceCompatibility = '17'
@@ -67,7 +67,7 @@ jar {
 
     duplicatesStrategy = DuplicatesStrategy.INCLUDE  // This line handles duplicates
     // Hier wird festgelegt, wo das JAR-File gespeichert wird
-    archiveFileName = 'pecunia-0.0.1-SNAPSHOT-plain.jar'
+    archiveFileName = 'pecunia-0.1.1-SNAPSHOT-plain.jar'
     
     compileJava.options.encoding = 'UTF-8'
 

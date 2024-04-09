@@ -11,6 +11,8 @@ java {
 	sourceCompatibility = '17'
 }
 
+
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -20,6 +22,9 @@ configurations {
 repositories {
 	mavenCentral()
 }
+
+
+
 
 dependencies {
 	
@@ -49,3 +54,27 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.ebader.pecunia.PecuniaApplication'
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE  // This line handles duplicates
+    // Hier wird festgelegt, wo das JAR-File gespeichert wird
+    archiveFileName = 'pecunia-0.0.1-SNAPSHOT-plain.jar'
+    
+    compileJava.options.encoding = 'UTF-8'
+
+	tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+}
+
+
+

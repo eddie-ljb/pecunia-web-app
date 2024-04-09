@@ -1,82 +1,82 @@
 <html>
-	<head>
-		<title>Pecunia - Geografie</title>
-		<link rel="icon" type="image/x-icon" href="banner.png">
-		<link href="bootstrap.css" rel="stylesheet" />
-		<link href="geografieBCSS.css" rel="stylesheet" />
-		<meta http-equiv="Content-Security-Policy" content="">
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
-  		<div class="container-fluid">
-  			<a class="navbar-brand" href="#">
-  			<img src="banner.png" alt="Logo" width="18" height="28" class="d-inline-block align-text-top">
-  			Navigation</a>
-    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"></span>
-   			</button>
-    		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-      			<ul class="navbar-nav">
-       			<li class="nav-item">
-         			<a class="nav-link active" aria-current="page" href="/">Home</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/stats">Statistiken</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/news">News</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/pol">Politik</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/geo">Geografie</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/faq">FAQ</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/kon">Kontakt</a>
-        		</li>
-        		<li class="nav-item">
-          			<a class="nav-link" href="/imp">Impressum</a>
-        		</li>
-      			</ul>
-      			
-        		<form class="d-flex" role="search">
-        			<input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search">
-        			<button class="btn btn-outline-success" type="submit">Suche</button>
-      			</form>
-    		</div>
-  		</div>
-		</nav>
-		
-		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Geografie</small></h1>
-		<hr>
-		
-		<div class="embed-responsive embed-responsive-16by9" align="center">
-  			<iframe id="mapIframe" class="embed-responsive-item" src="http://map.twenture.net:8123/?worldname=world&mapname=flat&zoom=0&x=12500&y=64&z=484" height="720px" width="80%"></iframe>
-		</div>
-		<script>
-    	// Function to handle the iframe load event
-    	function handleIframeLoad() {
+<head>
+    <title>Pecunia - Geografie</title>
+    <link rel="icon" type="image/x-icon" href="banner.png">
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="geografieBCSS.css" rel="stylesheet" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://map.twenture.net:8123; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="banner.png" alt="Logo" width="18" height="28" class="d-inline-block align-text-top">
+            Navigation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats">Statistiken</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/news">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pol">Politik</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/geo">Geografie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/kon">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/imp">Impressum</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Suche</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Geografie</small></h1>
+<hr>
+
+<div class="embed-responsive embed-responsive-16by9" align="center">
+    <iframe id="mapIframe" class="embed-responsive-item" src="http://map.twenture.net:8123/?worldname=world&mapname=flat&zoom=0&x=12500&y=64&z=484" height="720px" width="80%"></iframe>
+</div>
+<script>
+    // Function to handle the iframe load event
+    function handleIframeLoad() {
         // This function will be executed when the iframe content has finished loading
         console.log("Iframe content has loaded successfully");
         // Perform any actions or message passing here
-    	}
+    }
 
-    	// Get reference to the iframe element
-    	var iframe = document.getElementById('mapIframe');
+    // Get reference to the iframe element
+    var iframe = document.getElementById('mapIframe');
 
-    	// Check if the iframe element exists
-    	if (iframe) {
+    // Check if the iframe element exists
+    if (iframe) {
         // Add event listener for the load event
         iframe.addEventListener('load', handleIframeLoad);
-    	} else {
+    } else {
         console.error("Iframe element not found");
-    	}
-		</script>	
-		<hr>
-		<script src="bootstrap.bundle.min.js"></script>
-	</body>
+    }
+</script>
+<hr>
+<script src="bootstrap.bundle.min.js"></script>
+</body>
 </html>

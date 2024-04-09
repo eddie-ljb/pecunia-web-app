@@ -3,4 +3,3 @@ VOLUME /tmp
 ARG JAR_FILE
 COPY build/libs/pecunia-0.1.1-SNAPSHOT.jar pecunia-0.1.1-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","/pecunia-0.1.1-SNAPSHOT.jar"]
-EXPOSE 8080

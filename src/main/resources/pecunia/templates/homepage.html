@@ -6,7 +6,6 @@
 		<link href="homepageBCSS.css" rel="stylesheet" />
 	</head>
 	<body>
-		
 		<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
   		<div class="container-fluid">
   			<a class="navbar-brand" href="#">
@@ -52,6 +51,38 @@
 		</nav>
 		
 		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Startseite</small></h1>
+		<hr>
 		
+		<div id="carouselStartseiteCaptions" class="carousel slide" data-bs-ride="carousel">
+  			<div class="carousel-indicators">
+    			<button type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    			<button type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  			</div>
+  			<div class="carousel-inner">
+    			<div class="carousel-item active" style="width: 100%; height: 650px;">
+     				<img src="wavingflag.png" class="d-block w-100" alt="...">
+      				<div class="carousel-caption d-none d-md-block">
+        				<h5>Pecunia - a minecraft nation.</h5>
+        				<p>Pecunia ist eine facettenreiche Nation, die auf bereits einigen Servern ihr Können beweisen konnte.<br> Trete du auch heute bei und sei ein Teil der Geschichte.</p>
+      				</div>
+    			</div>
+    			<div class="carousel-item" style="width: 100%; height: 650px;">
+      				<img src="twenture-banner.jpg" class="d-block w-100" alt="...">
+      				<div class="carousel-caption d-none d-md-block">
+        				<h5>Minecraft Server: Twenture.net</h5>
+        				<p>Im Moment spielen wir auf dem Mincraft Server Twenture.net!<br>IP-Adresse: mc.twenture.net<br>Version: 1.20.x<br></p><p><a href="https://twenture.net/">Website</a></p>
+      				</div>
+    			</div>
+  			</div>
+ 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide="prev">
+    			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    			<span class="visually-hidden">Previous</span>
+  			</button>
+  			<button class="carousel-control-next" type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide="next">
+    			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+   				<span class="visually-hidden">Next</span>
+  			</button>
+		</div>
+		<script src="bootstrap.bundle.min.js"></script>
 	</body>
 </html>

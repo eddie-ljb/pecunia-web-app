@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pecunia - Startseite</title>
+		<link rel="icon" type="image/x-icon" href="banner.png">
+		<link href="bootstrap.css" rel="stylesheet" />
+		<link href="homepageBCSS.css" rel="stylesheet" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+  		<div class="container-fluid">
+  			<a class="navbar-brand" href="#">
+  			<img src="banner.png" alt="Logo" width="18" height="28" class="d-inline-block align-text-top">
+  			Navigation</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+   			</button>
+    		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+      			<ul class="navbar-nav">
+       			<li class="nav-item">
+         			<a class="nav-link active" aria-current="page" href="/">Home</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/stats">Statistiken</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/news">News</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/pol">Politik</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/geo">Geografie</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/faq">FAQ</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/kon">Kontakt</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/imp">Impressum</a>
+        		</li>
+      			</ul>
+      			
+        		<form class="d-flex" role="search">
+        			<input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search">
+        			<button class="btn btn-outline-success" type="submit">Suche</button>
+      			</form>
+    		</div>
+  		</div>
+		</nav>
+		
+		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Startseite</small></h1>
+		<hr>
+		
+		<div id="carouselStartseiteCaptions" class="carousel slide" data-bs-ride="carousel">
+  			<div class="carousel-indicators">
+    			<button type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    			<button type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  			</div>
+  			<div class="carousel-inner">
+    			<div class="carousel-item active" style="width: 100%; height: 650px;">
+     				<img src="wavingflag.png" class="d-block w-100" alt="...">
+      				<div class="carousel-caption d-none d-md-block">
+        				<h5>Pecunia - a minecraft nation.</h5>
+        				<p>Pecunia ist eine facettenreiche Nation, die auf bereits einigen Servern ihr Können beweisen konnte.<br> Trete du auch heute bei und sei ein Teil der Geschichte.</p>
+      				</div>
+    			</div>
+    			<div class="carousel-item" style="width: 100%; height: 650px;">
+      				<img src="twenture-banner.jpg" class="d-block w-100" alt="...">
+      				<div class="carousel-caption d-none d-md-block">
+        				<h5>Minecraft Server: Twenture.net</h5>
+        				<p>Im Moment spielen wir auf dem Mincraft Server Twenture.net!<br>IP-Adresse: mc.twenture.net<br>Version: 1.20.x<br></p><p><a href="https://twenture.net/">Website</a></p>
+      				</div>
+    			</div>
+  			</div>
+ 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide="prev">
+    			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    			<span class="visually-hidden">Previous</span>
+  			</button>
+  			<button class="carousel-control-next" type="button" data-bs-target="#carouselStartseiteCaptions" data-bs-slide="next">
+    			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+   				<span class="visually-hidden">Next</span>
+  			</button>
+		</div>
+		<hr>
+		<script src="bootstrap.bundle.min.js"></script>
+	</body>
+</html>

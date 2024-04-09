@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pecunia - Kontakt</title>
+		<link rel="icon" type="image/x-icon" href="banner.png">
+		<link href="bootstrap.css" rel="stylesheet" />
+		<link href="kontaktBCSS.css" rel="stylesheet" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+  		<div class="container-fluid">
+  			<a class="navbar-brand" href="#">
+  			<img src="banner.png" alt="Logo" width="18" height="28" class="d-inline-block align-text-top">
+  			Navigation</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+   			</button>
+    		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+      			<ul class="navbar-nav">
+       			<li class="nav-item">
+         			<a class="nav-link active" aria-current="page" href="/">Home</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/stats">Statistiken</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/news">News</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/pol">Politik</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/geo">Geografie</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/faq">FAQ</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/kon">Kontakt</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/imp">Impressum</a>
+        		</li>
+      			</ul>
+      			
+        		<form class="d-flex" role="search">
+        			<input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search">
+        			<button class="btn btn-outline-success" type="submit">Suche</button>
+      			</form>
+    		</div>
+  		</div>
+		</nav>
+		
+		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Kontakt</small></h1>
+		<hr>
+		<div align="center">
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeZGO6CQQnFTHC9Bfk3dfe99f-OQTBCZBictRVDEL4Swva5Fw/viewform?embedded=true" width="640" height="1146" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+		<hr>
+		<a href="mailto:baderetienne@gmail.com" target="_blank" class="btn btn-primary">Email Uns</a>
+		<hr>
+		</div>
+		<script src="bootstrap.bundle.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</body>
+</html>

@@ -55,8 +55,27 @@
 		<hr>
 		
 		<div class="embed-responsive embed-responsive-16by9" align="center">
-  			<iframe class="embed-responsive-item" src="https://map.twenture.net:8123/?worldname=world&mapname=flat&zoom=0&x=12500&y=64&z=484" height="720px" width="80%"></iframe>
+  			<iframe id="mapIframe" class="embed-responsive-item" src="http://map.twenture.net:8123/?worldname=world&mapname=flat&zoom=0&x=12500&y=64&z=484" height="720px" width="80%"></iframe>
 		</div>
+		<script>
+    		// Function to handle the iframe load event
+    	function handleIframeLoad() {
+        // This function will be executed when the iframe content has finished loading
+        console.log("Iframe content has loaded successfully");
+        // Perform any actions or message passing here
+    	}
+
+    	// Get reference to the iframe element
+    	var iframe = document.getElementById('mapIframe');
+
+    	// Check if the iframe element exists
+    	if (iframe) {
+        // Add event listener for the load event
+        iframe.addEventListener('load', handleIframeLoad);
+    	} else {
+        console.error("Iframe element not found");
+    	}
+		</script>	
 		<hr>
 		<script src="bootstrap.bundle.min.js"></script>
 	</body>

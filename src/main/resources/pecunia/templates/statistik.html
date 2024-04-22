@@ -53,7 +53,30 @@
 		
 		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Statistiken</small></h1>
 		<hr>
-		
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+			<div th:each="inventar : ${inventarListe}">
+				<div class="col">
+					<div class="card border-info text-bg-light mb-3" style="margin-left: 2px; margin-right: 2px;">
+  						<h5 class="card-header"><span th:text="${inventar.getZugehoerigkeit()}"></span></h5>
+  						<div class="card-body">
+    						<h5 class="card-title">Statistik vom <span th:text="${inventar.getDatum()}"></span></h5>
+    						<hr>
+    						<p class="card-text">Bankguthaben: <span th:text="${inventar.getBankguthaben()}"></span>€</p>
+    						<p class="card-text">Chunks: <span th:text="${inventar.getChunks()}"></span></p>
+    						<p class="card-text">Spielerzahl: <span th:text="${inventar.getSpielerzahl()}"></span></p>
+    						<span th:if="${inventar.getStadtzahl() != null}">
+    						<p class="card-text">Stadtzahl: <span th:text="${inventar.getStadtzahl()}"></span></p></span>
+							<span th:unless="${inventar.getStadtzahl() != null}">
+							<br></span>
+  						</div>
+  						<div class="card-footer text-body-secondary">
+							Abrufzeit: <span th:text="${zeit_aktuell}"></span>  						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+					
 		<script src="bootstrap.bundle.min.js"></script>
 	</body>
 </html>

@@ -46,10 +46,6 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.28'
     implementation 'org.postgresql:postgresql:42.7.3'
     
-    // Kafka Integration
-    implementation 'org.springframework.kafka:spring-kafka'
-    testImplementation 'org.springframework.kafka:spring-kafka-test'
-    
     // Logging and Utilities
     implementation 'biz.paluch.logging:logstash-gelf:1.15.0'
     implementation 'commons-io:commons-io:2.11.0'
@@ -60,16 +56,10 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test:3.4.1'
     testImplementation 'com.h2database:h2:2.2.224'
     
-    // Lombok (Development)
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    
     // Additional Database Drivers and Dependencies
     compileOnly fileTree(include: ["*.jar"], dir: "lib")
     implementation "com.ibm.db2.jcc:db2jcc:db2jcc4"
     implementation 'args4j:args4j:2.33'
-    runtimeOnly 'com.h2database:h2:1.4.197'
-    runtimeOnly 'com.ibm.db2:jcc'
     runtimeOnly 'com.mysql:mysql-connector-j'
     runtimeOnly 'io.asyncer:r2dbc-mysql'
     runtimeOnly 'io.r2dbc:r2dbc-h2'

@@ -8,5 +8,5 @@ Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
 Spring-Boot-Layers-Index: BOOT-INF/layers.idx
 Build-Jdk-Spec: 17
 Implementation-Title: pecunia
-Implementation-Version: 0.1.1-SNAPSHOT
+Implementation-Version: 0.1.2-SNAPSHOT
 

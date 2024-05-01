@@ -31,6 +31,41 @@ public class InventarMinecraft {
 	@Column(name = "stadtzahl", nullable = true)
 	private Long stadtzahl;
 	
+	@Column(name = "platzbank", nullable = true)
+	private Long platzbank;
+	
+	@Column(name = "platzchunks", nullable = true)
+	private Long platzchunks;
+	
+	@Column(name = "platzspieler", nullable = true)
+	private Long platzspieler;
+	
+	// GETTER UND SETTER
+	
+	public Long getPlatzbank() {
+		return platzbank;
+	}
+
+	public void setPlatzbank(Long platzbank) {
+		this.platzbank = platzbank;
+	}
+
+	public Long getPlatzchunks() {
+		return platzchunks;
+	}
+
+	public void setPlatzchunks(Long platzchunks) {
+		this.platzchunks = platzchunks;
+	}
+
+	public Long getPlatzspieler() {
+		return platzspieler;
+	}
+
+	public void setPlatzspieler(Long platzspieler) {
+		this.platzspieler = platzspieler;
+	}
+
 	public String getZugehoerigkeit() {
 		return zugehoerigkeit;
 	}

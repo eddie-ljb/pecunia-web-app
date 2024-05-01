@@ -13,10 +13,10 @@ import de.ebader.pecunia.entities.inventar.InventarMinecraft;
 @Repository
 public interface InventarMinecraftRepository extends JpaRepository<InventarMinecraft, String> {
 	
-	@Query("SELECT ivMinecraft FROM InventarMinecraft ivMinecraft WHERE ivMinecraft.datum = :datumAktuell")
+	@Query("SELECT ivMinecraft FROM InventarMinecraft ivMinecraft WHERE ivMinecraft.datum = :datumAktuell ORDER BY ivMinecraft.bankguthaben DESC")
 	List<InventarMinecraft> getInventarMinecraftVonBestimmtemDatum(@Param("datumAktuell") Date datumAktuell);
 	
-	@Query("SELECT ivMinecraft FROM InventarMinecraft ivMinecraft ORDER BY ivMinecraft.datum")
+	@Query("SELECT ivMinecraft FROM InventarMinecraft ivMinecraft ORDER BY ivMinecraft.bankguthaben DESC")
 	List<InventarMinecraft> getAllInventarMinecraft();
 	
 

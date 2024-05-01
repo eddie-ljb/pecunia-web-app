@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import de.ebader.pecunia.entities.inventar.InventarMinecraft;
+import de.ebader.pecunia.entities.inventar.SpielerInventur;
 import de.ebader.pecunia.services.InventarService;
 
 @Controller
@@ -71,7 +72,9 @@ public class HomepageController {
 		model.addAttribute("appName", appName);
 		model.addAttribute("zeit_aktuell", LocalDate.now());
 		List<InventarMinecraft> inventarListe = inventarService.getAllInventarEintraegeFuerDatum(Date.valueOf(LocalDate.now()));
+		List<SpielerInventur> spielerInventare = inventarService.getAlleSpielerInventarFuerBestimmtesDatum(Date.valueOf(LocalDate.now()));
 		model.addAttribute("inventarListe", inventarListe);
+		model.addAttribute("spielerInventare", spielerInventare);
 		return new ModelAndView("statistik.html");
 	}
 	

@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pecunia - Statistiken</title>
+		<link rel="icon" type="image/x-icon" href="banner.png">
+		<link href="bootstrap.css" rel="stylesheet" />
+		<link href="geografieBCSS.css" rel="stylesheet" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary">
+  		<div class="container-fluid">
+  			<a class="navbar-brand" href="#">
+  			<img src="banner.png" alt="Logo" width="18" height="28" class="d-inline-block align-text-top">
+  			Navigation</a>
+    		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+   			</button>
+    		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+      			<ul class="navbar-nav">
+       			<li class="nav-item">
+         			<a class="nav-link active" aria-current="page" href="/">Home</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/stats">Statistiken</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/news">News</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/pol">Politik</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/geo">Geografie</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/faq">FAQ</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/kon">Kontakt</a>
+        		</li>
+        		<li class="nav-item">
+          			<a class="nav-link" href="/imp">Impressum</a>
+        		</li>
+      			</ul>
+      			
+        		<form class="d-flex" role="search">
+        			<input class="form-control me-2" type="search" placeholder="Suche..." aria-label="Search">
+        			<button class="btn btn-outline-success" type="submit">Suche</button>
+      			</form>
+    		</div>
+  		</div>
+		</nav>
+		
+		<h1><span th:text="${appName}"></span> - <small class="text-body-secondary">Statistiken</small></h1>
+		<hr>
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+ 			<li class="nav-item" role="presentation">
+    			<button class="nav-link active" id="staedte-tab" data-bs-toggle="tab" data-bs-target="#staedte-tab-pane" type="button" role="tab" aria-controls="staedte-tab-pane" aria-selected="true">Städte / Land</button>
+  			</li>
+  			<li class="nav-item" role="presentation">
+   				<button class="nav-link" id="buerger-tab" data-bs-toggle="tab" data-bs-target="#buerger-tab-pane" type="button" role="tab" aria-controls="buerger-tab-pane" aria-selected="false">Bürger</button>
+  			</li>
+  			<li class="nav-item dropdown">
+    			<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Rankings</a>
+    			<ul class="dropdown-menu">
+	  			    <li><a class="dropdown-item" href="#" id="rankings-tab-stadt" data-bs-toggle="tab" data-bs-target="#rankings-tab-pane-stadt" type="button" role="tab" aria-controls="rankings-tab-pane-stadt" aria-selected="false">Städte</a></li>
+   					<li><hr class="dropdown-divider"></li>
+	    			<li><a class="dropdown-item" href="#" id="rankings-tab-buerger" data-bs-toggle="tab" data-bs-target="#rankings-tab-pane-buerger" type="button" role="tab" aria-controls="rankings-tab-pane-buerger" aria-selected="false">Bürger</a></li>
+    			</ul>
+  			</li>
+		</ul>
+		
+		<div class="tab-content" id="myTabContent">
+ 			<div class="tab-pane fade show active" id="staedte-tab-pane" role="tabpanel" aria-labelledby="staedte-tab" tabindex="0">
+ 				<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div th:each="inventar : ${inventarListe}">
+				<div class="col">
+					<div class="card border-info text-bg-light mb-3" style="margin-left: 2px; margin-right: 2px;">
+  						<h5 class="card-header"><span th:text="${inventar.getZugehoerigkeit()}"></span></h5>
+  						<div class="card-body">
+    						<h5 class="card-title">Statistik vom <span th:text="${inventar.getDatum()}"></span></h5>
+    						<hr>
+    						<p class="card-text">Bankguthaben: <span th:text="${inventar.getBankguthaben()}"></span>€, <span th:text="${inventar.getPlatzbank()}"></span>. Platz</p>
+    						<p class="card-text">Chunks: <span th:text="${inventar.getChunks()}"></span>, <span th:text="${inventar.getPlatzchunks()}"></span>. Platz</p>
+    						<p class="card-text">Spielerzahl: <span th:text="${inventar.getSpielerzahl()}"></span>, <span th:text="${inventar.getPlatzspieler()}"></span>. Platz</p>
+    						<span th:if="${inventar.getStadtzahl() != null}">
+    							<p class="card-text"><span class="badge bg-secondary-subtle rounded-pill">NATION</span> Stadtzahl: <span th:text="${inventar.getStadtzahl()}"></span></p>
+    						</span>
+							<span th:unless="${inventar.getStadtzahl() != null}">
+								<span class="badge bg-secondary rounded-pill">STADT</span><br>
+							</span>
+  						</div>
+  						<div class="card-footer text-body-secondary">
+							Abrufzeit: <span th:text="${zeit_aktuell}"></span>  						
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+ 			</div>
+  			<div class="tab-pane fade" id="buerger-tab-pane" role="tabpanel" aria-labelledby="buerger-tab" tabindex="0">
+  			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<div th:each="spieler : ${spielerInventare}">
+				<div class="col">
+					<div class="card border-info text-bg-light mb-3" style="margin-left: 2px; margin-right: 2px;">
+  						<h5 class="card-header"><span th:text="${spieler.getSpielername()}"></span></h5>
+  						<div class="card-body">
+    						<h5 class="card-title">Statistik vom <span th:text="${spieler.getDatum()}"></span></h5>
+    						<hr>
+    						<p class="card-text">Bankguthaben: <span th:text="${spieler.getBankguthaben()}"></span>€</p>
+    						<p class="card-text">Platzierung: <span th:text="${spieler.getPlatz()}"></span></p>
+    						<p class="card-text">Stadtzugehörigkeit: <span th:text="${spieler.getStadtzugehoerigkeit()}"></span></p>
+							<br>
+  						</div>
+  						<div class="card-footer text-body-secondary">
+							Abrufzeit: <span th:text="${zeit_aktuell}"></span>  						
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			</div>
+ 			<div class="tab-pane fade" id="rankings-tab-pane-buerger" role="tabpanel" aria-labelledby="rankings-tab-buerger" tabindex="0">
+ 			
+ 				<h5 class="card-header" style="text-align: center;">Spieler-Ranking</h5><hr>
+ 				<ol class="list-group list-group-numbered">
+ 				<div th:each="spieler : ${spielerInventare}">
+ 					 <li class="list-group-item d-flex justify-content-between align-items-start">
+ 					 	 <div class="ms-2 me-auto">
+ 					 	 	<div class="fw-bold"><span th:text="${spieler.getSpielername()}"></span></div>
+ 					 	 	<span th:text="${spieler.getBankguthaben()}"></span>€, <span th:text="${spieler.getStadtzugehoerigkeit()}"></span>
+ 					 	 </div>
+ 					 	 <span class="badge text-bg-primary rounded-pill"><span th:text="${spieler.getPlatz()}"></span>.</span>
+ 					 	 <span class="badge bg-secondary rounded-pill"><span th:text="${spieler.getStadtzugehoerigkeit().substring(0,2)}"></span></span>
+ 					 </li>
+ 				</div>
+ 				</ol>
+ 				
+			</div>
+ 			<div class="tab-pane fade" id="rankings-tab-pane-stadt" role="tabpanel" aria-labelledby="rankings-tab-stadt" tabindex="0">
+ 			
+ 				<h5 class="card-header" style="text-align: center;">Städte-Ranking</h5><hr>
+ 				<ol class="list-group list-group-numbered">
+ 				<div th:each="inventar : ${inventarListe}">
+ 					 <li class="list-group-item d-flex justify-content-between align-items-start">
+ 					 	 <div class="ms-2 me-auto">
+ 					 	 	<div class="fw-bold"><span th:text="${inventar.getZugehoerigkeit()}"></span></div>
+ 					 	 	<span th:text="${inventar.getBankguthaben()}"></span>€, <span th:text="${inventar.getChunks()}"></span> Chunks, <span th:text="${inventar.getSpielerzahl()}"></span> Spieler
+ 					 	</div>
+ 					 	<span th:if="${inventar.getStadtzahl() != null}">
+ 					 	 <span class="badge bg-primary rounded-pill"><span th:text="${inventar.getPlatzbank()}"></span>.</span>
+ 					 	 <span class="badge bg-success rounded-pill"><span th:text="${inventar.getPlatzchunks()}"></span>.</span>
+ 					 	 <span class="badge bg-info rounded-pill"><span th:text="${inventar.getPlatzspieler()}"></span>.</span>
+ 					 	 <span class="badge bg-secondary-subtle rounded-pill">NATION</span>
+    					</span>
+						<span th:unless="${inventar.getStadtzahl() != null}">
+ 					 	 <span class="badge text-bg-primary rounded-pill"><span th:text="${inventar.getPlatzbank()}"></span>.</span>
+ 					 	 <span class="badge text-bg-success rounded-pill"><span th:text="${inventar.getPlatzchunks()}"></span>.</span>
+ 					 	 <span class="badge text-bg-info rounded-pill"><span th:text="${inventar.getPlatzspieler()}"></span>.</span>
+ 					 	 <span class="badge bg-secondary rounded-pill">STADT</span>
+						</span>
+ 					 </li>
+ 				</div>
+ 				</ol>
+ 				
+			</div>
+		</div>
+    				
+		<script src="bootstrap.bundle.min.js"></script>
+	</body>
+</html>
